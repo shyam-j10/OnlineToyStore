@@ -18,7 +18,6 @@ import { cartProducts, favProducts} from '../../Redux/actions/action'
 
 
 export default function Shop() {
-  const[arr,setArr]=useState([]);
   const dispatch=useDispatch();
   const prod=useSelector(state=>state)
     const source=[
@@ -58,6 +57,7 @@ export default function Shop() {
                 <h2 className='btnshop' 
                   onClick={()=>{
                     dispatch(cartProducts(product))
+                    alert("Added successfully")
                   }}
                 >Add To cart</h2>
               </div>

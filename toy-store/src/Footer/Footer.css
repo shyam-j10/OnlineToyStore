@@ -1,0 +1,57 @@
+/* Reset default margin and padding for the whole page */
+body, html {
+  margin: 0;
+  padding: 0;
+ 
+}
+
+/* Style the footer */
+footer {
+  background-color: black;
+  padding: 20px;
+  text-align: center;
+  color: grey;
+}
+
+/* Style the container to center the content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Style the footer content */
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+/* Style the footer logo */
+.footer-logo img {
+  max-width: 100px; /* Set the appropriate width for your logo */
+}
+
+/* Style the footer links */
+.footer-links a {
+  text-decoration: none;
+  color: #333;
+  margin: 0 10px;
+}
+
+/* Style the additional footer information */
+.footer-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
+.text-justify{
+  text-align: justify!important;
+  width: 800px;
+  font-family:helvetica neue;
+  float: left;
+  margin-top: 30px;
+  padding: 10px;
+  
+}

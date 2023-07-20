@@ -9,6 +9,7 @@ import home4 from "../assets/home4.webp"
 import home5 from "../assets/home5.webp"
 import home8 from "../assets/home8.webp"
 import Navbar from '../Nav/Navbar'
+import Footer from '../Footer/Footer'
 
 
 
@@ -36,6 +37,7 @@ export default function Home() {
           <Link to='/shop'> <img src={arr[index]} id="slider"/> </Link>
           </div>
       </div>
+      <Footer/>
     </div>
     
   )

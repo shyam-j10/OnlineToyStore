@@ -30,6 +30,7 @@ export default function Cart() {
                 <h2 className='btnshop' 
                   onClick={()=>{
                     dispatch(removeCart(product))
+                    alert("Removed Successfully")
                   }}
                 >Remove from cart</h2>
               </div>
