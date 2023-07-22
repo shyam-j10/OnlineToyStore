@@ -1,0 +1,64 @@
+
+*{
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#s{
+	color: #f92702;
+	margin-top: 5px;
+	margin-right:px;
+	font-size: 50px;
+}
+
+.sign-in {
+	background-image: url('../assets/sign.jpg'); 
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+#loginh1{
+	margin-top: 15%;
+}
+#loginform{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 20px;
+	width: 700px;
+	margin-left: 350px;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 50%;
+}
+
+a {
+	color:blue;
+	font-size: 14px;
+	text-decoration: none;
+	margin: 15px 0;
+}
+
+#btn1 {
+	border-radius: 20px;
+	border: 1px solid #FF4B2B;
+	background-color: #FF4B2B;
+	color: #FFFFFF;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+#btn1:active {
+	transform: scale(0.9);
+}
+
+
