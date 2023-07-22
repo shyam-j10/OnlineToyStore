@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import NavBar from '../../Nav/Navbar';
 import { cartProducts, removeCart } from '../../Redux/actions/action';
@@ -8,11 +8,29 @@ export default function Cart() {
 
   const prod=useSelector(state=>state)
   const dispatch=useDispatch()
-  const source=prod.allProducts.cartProduct;
-  console.log(localStorage.getItem("lists"));
-  // useEffect(() => {
+  // const source=prod.allProducts.cartProduct;
+  const[source,setSource]=useState([]);
+   
 
-  // }, [])
+  
+
+
+  useEffect(() => {
+    setSource(JSON.parse(localStorage.getItem("items")));
+  }, [])
+  console.log(source)
+  const remove=(id)=>{
+
+    for(let i=0;i<source.length;i++){
+      if(source[i].id === id){
+        source.splice(i,1);
+
+        localStorage.setItem("items",JSON.stringify(source));
+        document.location.reload();
+      }
+    }
+    console.log(id);
+  }
   return (
     <div>
         <NavBar/>
@@ -29,8 +47,8 @@ export default function Cart() {
               <div className='btns'>
                 <h2 className='btnshop' 
                   onClick={()=>{
-                    dispatch(removeCart(product))
                     alert("Removed Successfully")
+                    remove(product.id)
                   }}
                 >Remove from cart</h2>
               </div>
@@ -41,3 +59,4 @@ export default function Cart() {
     </div>
   )
 }
+

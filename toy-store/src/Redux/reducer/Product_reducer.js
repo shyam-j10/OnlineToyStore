@@ -7,9 +7,10 @@ const initialState = { cartProduct: [] ,favProduct :[] };
 export const ProductReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionType.ADD_TO_CART:
-      return { 
-        ...state, cartProduct: [...state.cartProduct, payload] 
-      };
+
+      let val= {...state, cartProduct: [...state.cartProduct, payload]}
+      localStorage.setItem("items",JSON.stringify(val.cartProduct));
+      return val;
      
     case ActionType.WISHLIST:
       return {
@@ -28,7 +29,6 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
           ...state.cartProduct.filter( cart => cart !=payload)
         ]
       };
-
 
     default:
       return state;

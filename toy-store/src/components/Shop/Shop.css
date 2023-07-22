@@ -31,6 +31,9 @@
     width: 300px;
     height: 300px;
 }
+#share{
+    float: right;
+}
 .btnshop{
    border-radius: 20px;
 	border: 1px solid #FF4B2B;
@@ -45,7 +48,7 @@
 	transition: transform 80ms ease-in;
 	margin-top: 20px;
 	margin-bottom: 20px;
-    margin-left: 25px;
+    margin-left: 110px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	cursor: pointer;
 }

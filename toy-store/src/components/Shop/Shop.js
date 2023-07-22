@@ -11,6 +11,8 @@ import shop9 from '../../assets/shop9.jpg'
 import shop10 from '../../assets/shop10.webp'
 import shop11 from '../../assets/shop11.avif'
 import "./Shop.css"
+import { FcLike } from 'react-icons/fc';
+import { BsFillShareFill } from 'react-icons/bs';
 
 import NavBar from '../../Nav/Navbar'
 import { useDispatch, useSelector } from 'react-redux'
@@ -21,8 +23,8 @@ export default function Shop() {
   const dispatch=useDispatch();
   const prod=useSelector(state=>state)
     const source=[
-      {"id":1,"link":"https://m.media-amazon.com/images/I/81kfaJXnEXL._SX679_.jpg","category":"Building Kit/Toy","brand":"Lego","age":"3+","desc":"Lego's City Stunt Plane Building Set","price":1150,"dprice":1025,"save":10},
-      {"id":2,"link":"https://m.media-amazon.com/images/I/41TS30fYizL._SX300_SY300_QL70_FMwebp_.jpg","category":"Electric Toys","brand":"HotWheels","age":"6+","desc":"Hotwheels's Mercedes-Benz","price":1700,"dprice":1550,"save":9},
+        {"id":1,"link":"https://m.media-amazon.com/images/I/81kfaJXnEXL._SX679_.jpg","category":"Building Kit/Toy","brand":"Lego","age":"3+","desc":"Lego's City Stunt Plane Building Set","price":1150,"dprice":1025,"save":10},
+        {"id":2,"link":"https://m.media-amazon.com/images/I/41TS30fYizL._SX300_SY300_QL70_FMwebp_.jpg","category":"Electric Toys","brand":"HotWheels","age":"6+","desc":"Hotwheels's Mercedes-Benz","price":1700,"dprice":1550,"save":9},
         {"id":3,"link":"https://m.media-amazon.com/images/I/61ifmdT0S+L._SX679_.jpg","category":"Electric Toys","brand":"Lego","age":"6+","desc":"Lego's City Electric Sports Car","price":960,"dprice":850,"save":12},
         {"id":4,"link":"https://m.media-amazon.com/images/I/614NJhExrvL._AC_UL800_FMwebp_QL65_.jpg","category":"Puzzle Toys","brand":"Lego","age":"6+","desc":"Lego's Batman Building Set","price":3050,"dprice":2900,"save":5},
         {"id":5,"link":"https://m.media-amazon.com/images/I/71naWAemcJL._SX679_.jpg","category":"Castle Toy","brand":"Lego/Disney","age":"6+","desc":"Disney's Elsa Castle Building Set","price":1150,"dprice":1025,"save":10}, 
@@ -40,6 +42,10 @@ export default function Shop() {
       <div className='products'>
         {source.map((product)=>
           <div className='product' key={product.id}>
+            <a href='' onClick={()=>{
+              dispatch(favProducts(product))
+              }}><FcLike/></a>
+            <a href='' id='share'><BsFillShareFill/></a>
  
               <img src={product.link} className='image'></img>
               <p>{product.desc}</p>

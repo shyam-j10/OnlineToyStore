@@ -9,6 +9,7 @@ import NavBar from './Nav/Navbar';
 import Search from './Search/Search';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/Wishlist/Wishlist';
+import Dashboard from './components/Dashboard/Dashboard';
 
 
 export const UserContext=createContext();
@@ -29,6 +30,7 @@ function App() {
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/wishlist' element={<Wishlist/>}></Route>
             <Route path='/shop/:search' element={<Search/>}></Route>
+            <Route path='/dashboard' element={<Dashboard/>}></Route>
           </Routes>
       </BrowserRouter> 
     </UserContext.Provider>
