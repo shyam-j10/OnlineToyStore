@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import NavBar from '../../Nav/Navbar';
 import { removeCart, removeWishlist } from '../../Redux/actions/action';
@@ -6,8 +6,23 @@ import "../Shop/Shop.css"
 
 export default function Wishlist() {
     const dispatch=useDispatch();
-    const prod=useSelector(state=>state)
-    const source=prod.allProducts.favProduct;
+    const [source,setSource]=useState([]);
+    useEffect(() => {
+      setSource(JSON.parse(localStorage.getItem("fav")));
+    }, [])
+    console.log(source)
+    const remove=(id)=>{
+  
+      for(let i=0;i<source.length;i++){
+        if(source[i].id === id){
+          source.splice(i,1);
+  
+          localStorage.setItem("fav",JSON.stringify(source));
+          document.location.reload();
+        }
+      }
+      console.log(id);
+    }
   return (
     <div>
 
@@ -17,7 +32,7 @@ export default function Wishlist() {
           <div className='product' key={product.id}>
  
               <img src={product.link} className='image'></img>
-              <p>{product.desc}</p>
+              <p>{product.des}</p>
               <div className='prices'>
                   <p id='price'> ₹{product.price}</p>
                   <p id='dprice'> ₹{product.dprice}</p>
@@ -26,7 +41,8 @@ export default function Wishlist() {
               <div className='btns'>
                 <h2 className='btnshop' 
                   onClick={()=>{
-                    dispatch(removeWishlist(product))
+                    alert("Removed from favorites")
+                    remove(product.id);
                   }}
                 >Remove from Wishlist</h2>
               </div>

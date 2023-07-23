@@ -13,9 +13,12 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
       return val;
      
     case ActionType.WISHLIST:
-      return {
-        ...state, favProduct: [...state.favProduct, payload]
-      };
+      // return {
+      //   ...state, favProduct: [...state.favProduct, payload]
+      // };
+      let value= {...state, favProduct: [...state.favProduct, payload]}
+      localStorage.setItem("fav",JSON.stringify(value.favProduct));
+      return value;
     case ActionType.REMOVE_WISHLIST:
       return {
         favProduct: [

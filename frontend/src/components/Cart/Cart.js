@@ -4,6 +4,7 @@ import NavBar from '../../Nav/Navbar';
 import { cartProducts, removeCart } from '../../Redux/actions/action';
 import "../Shop/Shop.css"
 
+
 export default function Cart() {
 
   const prod=useSelector(state=>state)
@@ -34,11 +35,14 @@ export default function Cart() {
   return (
     <div>
         <NavBar/>
+       
+       
       <div className='products'>
+    
         {source.map((product)=>
-          <div className='product' key={product.id}>
+          <div className='product' key={product.pid}>
               <img src={product.link} className='image'></img>
-              <p>{product.desc}</p>
+              <p>{product.des}</p>
               <div className='prices'>
                   <p id='price'> ₹{product.price}</p>
                   <p id='dprice'> ₹{product.dprice}</p>
@@ -47,7 +51,7 @@ export default function Cart() {
               <div className='btns'>
                 <h2 className='btnshop' 
                   onClick={()=>{
-                    alert("Removed Successfully")
+                    alert("Removed from Cart")
                     remove(product.id)
                   }}
                 >Remove from cart</h2>

@@ -1,25 +1,12 @@
 
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Poppins', sans-serif;
-  }
-  /* #company-name{
-    color: black;
-    font-family: 'Ysabeau SC', sans-serif;
-    font-size: 40px;
-    margin-top: 25px;
-  } */
   #home{
     font-size: 20px;
-    margin-top: 45px;
-    /* margin-right: 10%; */
+    margin-top: 20px;
     padding: 20px;
   }
   #shop{
     font-size: 20px;
-    margin-top: 45px;
-    /* margin-right: 10%; */
+    margin-top: 20px;
     padding: 20px;
     
   }
@@ -27,20 +14,18 @@
     
     padding: 20px;
     font-size: 20px;
-    margin-top: 45px;
-    /* margin-right: 20%; */
+    margin-top: 20px;
   }
   #cart{
     padding: 20px;
     font-size: 20px;
-    margin-top: 45px;
-    /* margin-right: 10%; */
+    margin-top: 20px;
+
   }
   #wishlist{
     padding: 20px;
     font-size: 20px;
-    margin-top: 45px;
-    /* margin-right: 10%; */
+    margin-top: 20px;
   }
   .company{
     display: flex;
@@ -48,31 +33,25 @@
   }
 
   .company img{
-    width: 120%;
-    height: 60%;
+    width: 100%;
+    height: 80%;
     margin-left: 30px;
-    margin-top: 30px;
-    /* border-radius: 0.5cm; */
+    margin-top: 10px;
   }
 
   .container-nav{
     display: flex;
-    width: 100%;
-    /* height: auto; */
-    background-color:white;
-    margin-bottom: -50px;
-    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;s */
+    width: 100vw;
+    height: 100px;
+    background-color:rgb(0, 0, 0);
+    margin-bottom: 8px;
   }
   
   .tools{
     display: flex;
-    /* justify-content: space-around;s */
-    width:fit-content;
-    /* margin-top: 10px; */
-    margin-left: 80px;
+     width:fit-content;
+    margin-left: 1%;
     padding-bottom: 20px;
-    /* padding: 20px; */
-    
   }
   
 
@@ -80,72 +59,72 @@
     height: fit-content;
   }
   .tools a{
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     margin-left: 10px;
    
   }
   .tools a:hover{
-    /* color:rgb(2, 87, 136) ; */
     color: #FF4B2B;
-    /* padding:10px; */
   }
   
   .third-nav{
-    transform: translateX(70%);
+    transform: translateX(50%);
     width: 35%;
     height: auto;
     display: flex;
-    
-  }
-
-  .third-nav{
     color: black;
     display: block;
-    width: 300px;
-    /* padding: 10px; */
-   
-    
+  }
 
-  }
-  .searcharea{
-    margin-right: 100px ;
-    width: fit-content;
-  }
 
   .reg{
-    padding-bottom: 10px;
-    /* height: 20px; */
+    padding-bottom: 1px;
     border: none;
-    padding: 6px;
+    padding: 5px;
     text-align: center;
-    margin-left: 20px;
-    background-color:#FF4B2B;
-    color: whitesmoke;
-    margin-top:10px ; 
-    /* font-weight: bolder; */
+    background-color:#0b0201;
+    color: rgb(255, 255, 255);
+    margin-bottom:-52px ; 
+    margin-right: 13px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 0.1cm;
-
-    
-   
+    font-size: 26px;
   }
 
  #search{
-    margin-top: 60px;
-    padding-right: 5px;
-
+    margin-top: 38px;
+    margin-right: -10px;
+    padding: 10px;
+    color: aliceblue;
  }
  #inputsearch{
-  background-color: lightyellow;
-  width: 250px;
-  margin-top: 40px;
-  margin-left: 5px;
+  background-color: rgb(255, 255, 255);
+  width: 400px;
+  margin-top: 30px;
+  margin-left: -200px;
+  color:black;
+  border: 50px;
+  margin-bottom: 100px;
+
  }
  .btns1{
-  margin-left: 50px;
+  margin-top: 30px;
+  margin-left: 5%;
  }
 
-#home{
-    margin-left: 70px;
+
+
+#logo{
+  margin-left: 20px;
+  width: 100px;
+  height: 80px;
+  margin-top: 10px;
+}
+
+.hamb{
+  /* display: none; */
+  color: white;
+  transform: translate(100%,40%);
+  font-size: xx-large;
 }

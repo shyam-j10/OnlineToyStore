@@ -48,7 +48,7 @@
 	transition: transform 80ms ease-in;
 	margin-top: 20px;
 	margin-bottom: 20px;
-    margin-left: 110px;
+    margin-left: 20px;
 	font-family: Verdana, Geneva, Tahoma, sans-serif;
 	cursor: pointer;
 }
@@ -73,3 +73,31 @@
     color: green;
 }
 
+
+/* MarqueeImage.css */
+
+.marquee-container {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  
+  .marquee-container img {
+    width: 5000px;
+    height: 90px;
+    animation: marquee 40s linear infinite; 
+  }
+  
+  @keyframes marquee {
+    from {
+      transform: translateX(100%); 
+    }
+    to {
+      transform: translateX(-100%); 
+    }
+  }
+
+
+#imges{
+    width: 100%;
+}
+  

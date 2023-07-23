@@ -10,6 +10,7 @@ import Search from './Search/Search';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/Wishlist/Wishlist';
 import Dashboard from './components/Dashboard/Dashboard';
+import About from './About/About';
 
 
 export const UserContext=createContext();
@@ -27,6 +28,7 @@ function App() {
             <Route path='/login' element={<SignIn/>}></Route>
             <Route path='/signup' element={<SignUp/>}></Route>
             <Route path='/shop' element={<Shop/>}></Route>
+            <Route path='/about' element={<About/>}></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/wishlist' element={<Wishlist/>}></Route>
             <Route path='/shop/:search' element={<Search/>}></Route>
