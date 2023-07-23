@@ -2,7 +2,7 @@
 
 import { ActionType } from "../constant/Action-type";
 
-const initialState = { cartProduct: [] ,favProduct :[] };
+const initialState = { cartProduct: [] ,favProduct :[] ,name:""};
 
 export const ProductReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -21,17 +21,22 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
       return value;
     case ActionType.REMOVE_WISHLIST:
       return {
-        favProduct: [
+        ...state,favProduct: [
           ...state.favProduct.filter(fav => fav!=payload)
         ]
       };
 
     case ActionType.REMOVE_CART:
       return {
-        cartProduct: [
+        ...state,cartProduct: [
           ...state.cartProduct.filter( cart => cart !=payload)
         ]
       };
+
+    case ActionType.LOGIN:
+      return {
+        ...state,name:payload
+      }
 
     default:
       return state;

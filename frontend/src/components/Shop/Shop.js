@@ -55,7 +55,7 @@ export default function Shop() {
     
       <img src={home10} alt="img" id="imges"/>
       <div className="marquee-container">
-      <img src="https://cdn.fcglcdn.com/brainbees/banners/brandstrip1208-3-new-19-08-19.jpg" alt="Marquee Image" />
+      <img src="https://cdn.fcglcdn.com/brainbees/banners/brandstrip1208-3-new-19-08-19.jpg" alt="Marquee Image" style={{marginBottom:"10px"}}/>
     </div>
       <div className='products'>
         {source.map((product)=>
@@ -90,9 +90,9 @@ export default function Shop() {
         )}
       </div>
       {/* <img src={home11} alt="img" style={{width:'1800px'}} /> */}
-      <img src="https://cdn.fcglcdn.com/brainbees/images/intellitots-franchise-1dec22.jpg" style={{width:'1800px'}}/>
+      {/* <img src="https://cdn.fcglcdn.com/brainbees/images/intellitots-franchise-1dec22.jpg" style={{width:'1800px'}}/> */}
       <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/1920_132_desktop_moas_060723_30.jpg"/>
-      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_gear_&_activity_090523_18.jpg" style={{width:'1700px'}}/>           
+      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_gear_&_activity_090523_18.jpg"/>           
       <Footer/>
     </>
   )

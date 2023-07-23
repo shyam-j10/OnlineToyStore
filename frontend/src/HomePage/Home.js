@@ -115,7 +115,7 @@ export default function Home() {
             childhood while shopping for toys online at FirstCry.
       </p>
       </div>
-      <video width="1800" height="800" autoPlay loop>
+      <video width="1800" height="800" autoPlay loop style={{marginLeft:"-4%"}}>
       <source src={hv1} type="video/mp4"/>
       </video>
       <p></p>
@@ -123,10 +123,11 @@ export default function Home() {
       {/* <img src="https://www.funcorp.in/cdn/shop/files/MobiKwik_4-1_1270x.jpg?v=1671519550" style={{width:'1800px'}}/> */}
     
    
-      <img src={home9} style={{width:"1800px"}}/>
+      {/* <img src={home9} style={{width:"1800px"}}/> */}
       {/* <img src={home6} style={{width:"1800px"}}/> */}
       
-      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_feeding_&_kids_food_090523_01.jpg"/>
+      <Link to='shop'><img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_feeding_&_kids_food_090523_01.jpg"/></Link>
+      
       
       <Footer/>
     </div>

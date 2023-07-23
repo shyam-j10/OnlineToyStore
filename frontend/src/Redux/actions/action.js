@@ -28,3 +28,10 @@ export const removeWishlist = (products) =>{
   }
 }
 
+export const login=(name) => {
+  return {
+    type:ActionType.LOGIN,
+    payload:name
+  }
+}
+

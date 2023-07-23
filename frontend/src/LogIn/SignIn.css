@@ -9,6 +9,14 @@
 	font-size: 50px;
 }
 
+.toast-message {
+    background: darkblue;
+    color: #fff;
+    font-size: 20px;
+    width: 34vw;
+    padding: 30px 20px;
+}
+
 .sign-in {
 	background-image: url('../assets/sign.jpg'); 
 	background-size: cover;

@@ -2,15 +2,21 @@ import React, { useState } from 'react'
 import "./SignIn.css"
 import {Link, useNavigate} from "react-router-dom"
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { login } from '../Redux/actions/action';
 
 
 
 
 export default function SignIn() {
 	const navigate=useNavigate();
+	const dispatch=useDispatch();
 
 	const [customerLogin,setCustomerLogin]=useState(
-		{email:"",
+		{
+		name:"",
+		email:"",
 		password:""
 	}
 	)
@@ -24,11 +30,13 @@ export default function SignIn() {
 			const token=res.data.token;
 			console.log(token)
 			alert("Successfully signed in")
-			navigate("/dashboard")
+			dispatch(login(customerLogin.name))
+			navigate("/")
 		})
 		.catch((e)=>
 		{
 			console.log("Incorrect email/password")
+			alert("Incorrect email/password")
 		}
 		)
 
@@ -36,14 +44,15 @@ export default function SignIn() {
   return (
     <div>
       <div className="sign-in">
+		<ToastContainer/>
 		<form id='loginform' action="#" onSubmit={handleLogin}>
 			<h1 id='loginh1'><span id='s'>S</span>ign <span id='i'>i</span>n</h1>
-			{/* <input type="text" placeholder='Name' onChange={(e)=>{
+			<input type="text" placeholder='Name' onChange={(e)=>{
 				setCustomerLogin({
 					...customerLogin,
 					name:e.target.value
 				})
-			}} required/> */}
+			}} required/>
 			<input type="email" placeholder="Email" onChange={(e)=>{
 				setCustomerLogin({
 					...customerLogin,

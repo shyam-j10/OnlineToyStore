@@ -31,12 +31,14 @@ function NavBar() {
                 <i class="fa-solid fa-magnifying-glass" id='search' onClick={handleSearch}></i>
             </div>
             <div className='btns1' >
-              <button className='reg' onClick={()=>{navigate("/login")}}><i class="fa-regular fa-user"></i> Login</button>
-              <button className='reg' onClick={()=>{navigate("/signup")}}> <i class="fa-solid fa-pen-to-square" style={{color: '#ffffff'}}></i> Sign-Up</button>
+              <Link to={'/login'} id='reg'>
+                <i class="fa-regular fa-user"/> 
+                Login</Link>
+              <Link to={'/signup'} id='regs'><i class="fa-solid fa-pen-to-square"></i> Sign-Up</Link>
             </div>
-            <div className='hamb'>
+            {/* <div className='hamb'>
               <GiHamburgerMenu />
-            </div>
+            </div> */}
         </div>
       );
 }
