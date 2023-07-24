@@ -14,6 +14,8 @@ import hv1 from "../assets/hv1.mp4"
 import Navbar from '../Nav/Navbar'
 import Footer from '../Footer/Footer'
 
+import home10 from '../assets/addtocart.gif'
+
 
 
 
@@ -44,11 +46,12 @@ export default function Home() {
           </div>
 
       </div>
+      
       <div className='hom1'>
       <h2 className='head1'>
       Toys and Games for Babies & Kids.
       </h2>
-      <p>
+      <p style={{textAlign:"center"}}>
       Toys play a crucial part in development of a child. Toys as simple as wooden blocks
        or numbered puzzle, develops cognitive and physical skills. Complex puzzles, remote 
        control cars, bubble guns helps learn and analyse cause effects and spatial relationships.
@@ -60,12 +63,10 @@ export default function Home() {
       <h2 className='head1'>
       Buy Toys Online like never before
       </h2>
-      <p>
+      <p style={{textAlign:"center"}}>
       Choose to buy toys online and it will offer you widest range with features, specifications, 
       skill-set and use of toy. You are exposed to a variety of options of baby & kids toys from all 
-      over world. You don't have to limit yourself while shopping for your kids just because you are
-       tired. Choose FirstCry.com for online shopping of toys with a simplest click from anywhere in 
-       India and it will be shipped to you.
+      over world.
       </p>
      
       {/* <h2 className='head1'>
@@ -102,7 +103,7 @@ export default function Home() {
       <h2 className='head1'>
       Online Toy Store with a plethora of variety and brands
       </h2>
-      <p className='x'>
+      {/* <p className='x'>
       FirstCry.com is a one-stop shop for a wide range of toys online for kids of all ages.
        Determined by their complexity and features one can buy these toys. We take care of all
         your needs and give you a perfect overview of what a certain toy features. FirstCry.com
@@ -113,9 +114,9 @@ export default function Home() {
            a toy for your lil boy or girl. One can chose from brands like - Hamleys, Mitashi, Fisher Price, Mee Mee,
             Funskool, Fab N Funky, Hot Wheels, Simba, Skillofun, Barbie & lot more. Feel the thrill and relive your  
             childhood while shopping for toys online at FirstCry.
-      </p>
+      </p> */}
       </div>
-      <video width="1800" height="800" autoPlay loop style={{marginLeft:"-4%"}}>
+      <video width="1800" height="800" autoPlay loop style={{marginLeft:"0%"}}>
       <source src={hv1} type="video/mp4"/>
       </video>
       <p></p>

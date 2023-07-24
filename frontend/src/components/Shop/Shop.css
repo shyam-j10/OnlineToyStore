@@ -101,3 +101,13 @@
     width: 100%;
 }
   
+
+.cartprice {
+    background: #FF4B2B;
+    width: 20%;
+    padding: 20px;
+    color: white;
+    text-align: center;
+    transform: translateX(180%);
+}
+

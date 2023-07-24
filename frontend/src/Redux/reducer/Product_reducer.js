@@ -2,7 +2,7 @@
 
 import { ActionType } from "../constant/Action-type";
 
-const initialState = { cartProduct: [] ,favProduct :[] ,name:""};
+const initialState = { cartProduct: [] ,favProduct :[] ,names:""};
 
 export const ProductReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -35,7 +35,7 @@ export const ProductReducer = (state = initialState, { type, payload }) => {
 
     case ActionType.LOGIN:
       return {
-        ...state,name:payload
+        ...state,names:payload
       }
 
     default:

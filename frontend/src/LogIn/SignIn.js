@@ -31,7 +31,7 @@ export default function SignIn() {
 			console.log(token)
 			alert("Successfully signed in")
 			dispatch(login(customerLogin.name))
-			navigate("/")
+			navigate("/dashboard")
 		})
 		.catch((e)=>
 		{

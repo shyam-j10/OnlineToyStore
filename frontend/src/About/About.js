@@ -5,6 +5,7 @@ import { FcLike} from "react-icons/fc";
 import { FcSms} from "react-icons/fc";
 import { FcAbout} from "react-icons/fc";
 import h1 from "../assets/h1.jpg"
+import Footer from '../Footer/Footer';
 
 
 export default function About() {
@@ -57,6 +58,8 @@ export default function About() {
       Collections, Stay Ahead, and Express Your Unique Personality with Confidence in 
       Every Outfit You Wear."
      </p>
+
+     <Footer/>
     </>
   )
 }

@@ -1,13 +1,17 @@
 
 import './Navbar.css'
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 import logo from '../assets/logo.jpeg'
 import { UserContext } from '../App';
 import {GiHamburgerMenu} from 'react-icons/gi'
+import { HideImage } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
 
 function NavBar() {
-  const [search,setSearch]=useContext(UserContext);
+  const {val1,val2}=useContext(UserContext);
+  const [search,setSearch]=val1;
+  const[logged,setLogged]=val2;
 
 
   const navigate=useNavigate();
@@ -30,11 +34,15 @@ function NavBar() {
                 <input type="text" id='inputsearch' placeholder='Search for toys you need..' onChange={(e)=>{setSearch(e.target.value)}}></input>
                 <i class="fa-solid fa-magnifying-glass" id='search' onClick={handleSearch}></i>
             </div>
-            <div className='btns1' >
-              <Link to={'/login'} id='reg'>
+            <div className='btns1' style={{color:"white"}} >
+              
+
+              
+              {/* <Link to={'/login'} id='reg'>
                 <i class="fa-regular fa-user"/> 
-                Login</Link>
-              <Link to={'/signup'} id='regs'><i class="fa-solid fa-pen-to-square"></i> Sign-Up</Link>
+                Login</Link> */}
+
+              <Link to={'/signup'} id='regs'><i class="fa-solid fa-pen-to-square"></i> Account</Link>
             </div>
             {/* <div className='hamb'>
               <GiHamburgerMenu />

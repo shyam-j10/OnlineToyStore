@@ -17,10 +17,11 @@ export const UserContext=createContext();
 function App() {
    
   const [search,setSearch]=useState("");
+  const [logged,setLogged]=useState(false);
  
 
   return (
-    <UserContext.Provider value={[search,setSearch]}>
+    <UserContext.Provider value={{val1:[search,setSearch],val2:[logged,setLogged]}}>
        <BrowserRouter>
           <Routes>
             <Route index element={<Home/>}></Route>

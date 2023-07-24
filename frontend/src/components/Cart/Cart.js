@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import NavBar from '../../Nav/Navbar';
 import { cartProducts, removeCart } from '../../Redux/actions/action';
 import "../Shop/Shop.css"
-
+import home10 from '../../assets/addtocart.gif'
+import Footer from '../../Footer/Footer';
 
 export default function Cart() {
 
@@ -12,14 +13,20 @@ export default function Cart() {
   // const source=prod.allProducts.cartProduct;
   const[source,setSource]=useState([]);
    
-
+  const[total,setTotal]=useState(0);
   
 
 
   useEffect(() => {
     setSource(JSON.parse(localStorage.getItem("items")));
   }, [])
+  
+  useEffect(()=>{
+    source.map((product)=>
+    setTotal(total=>total+product.dprice))
+  },[source])
   console.log(source)
+
   const remove=(id)=>{
 
     for(let i=0;i<source.length;i++){
@@ -35,8 +42,10 @@ export default function Cart() {
   return (
     <div>
         <NavBar/>
-       
-       
+       {
+        source.length==0?
+          <img src={home10} style={{transform:"translateX(65%)"}}></img>:""
+       }
       <div className='products'>
     
         {source.map((product)=>
@@ -59,7 +68,13 @@ export default function Cart() {
           </div>
         )}
       </div>
-      
+        <div className='cartprice'>
+          <h1>
+            
+            Total Price:{total}
+            </h1>
+        </div>
+      {/* <Footer/> */}
     </div>
   )
 }

@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import NavBar from '../../Nav/Navbar';
 import { removeCart, removeWishlist } from '../../Redux/actions/action';
 import "../Shop/Shop.css"
+import home10 from '../../assets/addtocart.gif'
+import Footer from '../../Footer/Footer';
 
 export default function Wishlist() {
     const dispatch=useDispatch();
@@ -27,6 +29,10 @@ export default function Wishlist() {
     <div>
 
         <NavBar/>
+        {
+        source.length==0?
+          <img src={home10} style={{transform:"translateX(65%)"}}></img>:""
+       }
       <div className='products'>
         {source.map((product)=>
           <div className='product' key={product.id}>
@@ -49,6 +55,7 @@ export default function Wishlist() {
           </div>
         )}
       </div>
+      {/* <Footer/> */}
     </div>
   )
 }

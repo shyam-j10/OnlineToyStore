@@ -10,6 +10,7 @@ import shop7 from '../assets/shop7.webp'
 import shop8 from '../assets/shop8.webp'
 import shop9 from '../assets/shop9.jpg'
 import "../components/Shop/Shop.css"
+import NavBar from '../Nav/Navbar'
 
 export default function Search() {
     const source=[
@@ -47,25 +48,28 @@ export default function Search() {
     
     console.log(arr)
   return (
-    <div className='products'>
-      {
-        loading ? arr.map((items)=>
-            <div className='product'>
-                <img src={items.link} className='image'></img>
-                {/* <p>{items.brand}</p> */}
-                <p>{items.desc}</p>
-                <div className='prices'>
-                  <p id='price'> ₹{items.price}</p>
-                  <p id='dprice'> ₹{items.dprice}</p>
-                  <p id='disc'> Save{items.save}%</p>
-                </div>
-                <div className='btns'>
-                  <h2 className='btnshop'>Add To Wishlist</h2>
-                  <h2 className='btnshop'>Add To cart</h2>
-                </div>
-            </div>
-        ): "No"
-      }
+    <div>
+      <NavBar/>
+      <div className='products'>
+        {
+          loading ? arr.map((items)=>
+          <div className='product'>
+                  <img src={items.link} className='image'></img>
+                  {/* <p>{items.brand}</p> */}
+                  <p>{items.desc}</p>
+                  <div className='prices'>
+                    <p id='price'> ₹{items.price}</p>
+                    <p id='dprice'> ₹{items.dprice}</p>
+                    <p id='disc'> Save{items.save}%</p>
+                  </div>
+                  <div className='btns'>
+                    <h2 className='btnshop'>Add To Wishlist</h2>
+                    <h2 className='btnshop'>Add To cart</h2>
+                  </div>
+              </div>
+          ): "No"
+        }
+      </div>
     </div>
   )
 }
