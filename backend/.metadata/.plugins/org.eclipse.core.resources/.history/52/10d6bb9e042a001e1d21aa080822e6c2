@@ -1,0 +1,12 @@
+package com.example.demo.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class CartModel {
+	
+	@Id
+	private int cid;
+
+}
