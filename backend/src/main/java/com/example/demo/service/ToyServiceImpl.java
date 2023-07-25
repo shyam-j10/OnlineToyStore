@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class ToyServiceImpl implements ToyService{
 		model.setAge(toy.getAge());
 		model.setBrand(toy.getBrand());
 		model.setCategory(toy.getCategory());
-		model.setDesc(toy.getDes());
+		model.setDes(toy.getDes());
 		model.setDprice(toy.getDprice());
 		model.setPid(toy.getPid());
 		model.setLink(toy.getLink());
@@ -49,6 +50,11 @@ public class ToyServiceImpl implements ToyService{
 		BeanUtils.copyProperties(toy, model);
 		repo.save(model);
 		return true;
+	}
+
+	@Override
+	public Optional<ToyModel> getToyById(int id) {
+		return repo.findById(id);
 	}
 
 	

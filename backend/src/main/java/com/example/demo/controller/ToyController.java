@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +19,7 @@ import com.example.demo.model.ToyModel;
 import com.example.demo.service.ToyService;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("/api/v1/auth")
 public class ToyController {
 	@Autowired
@@ -32,6 +35,11 @@ public class ToyController {
 		return service.getAllToy();
 	}
 	
+	@GetMapping("/products/{id}")
+	public Optional<ToyModel> getToyById(@PathVariable int id) {
+		return service.getToyById(id);
+	}
+	
 	@PutMapping("/products/{id}")
 	public ToyModel updateToy(@RequestBody ToyDto toy,@PathVariable int id) {
 		return service.updateToy(toy,id);
@@ -41,5 +49,8 @@ public class ToyController {
 	public boolean deleteToy(@PathVariable int id) {
 		return service.deleteToy(id);
 	}
+	
+	
+	
 	
 }

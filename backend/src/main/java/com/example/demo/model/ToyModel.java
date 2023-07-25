@@ -8,7 +8,6 @@ import jakarta.persistence.Id;
 @Entity
 public class ToyModel {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	int pid;
 	String link;
 	String category;
@@ -51,7 +50,7 @@ public class ToyModel {
 	public String getDes() {
 		return des;
 	}
-	public void setDesc(String des) {
+	public void setDes(String des) {
 		this.des = des;
 	}
 	public int getPrice() {
