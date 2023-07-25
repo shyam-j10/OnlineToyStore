@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.ToyDto;
 import com.example.demo.model.ToyModel;
+import com.example.demo.repository.ToyRepository;
 import com.example.demo.service.ToyService;
 
 @RestController
@@ -24,6 +25,9 @@ import com.example.demo.service.ToyService;
 public class ToyController {
 	@Autowired
 	public ToyService service;
+	
+	@Autowired
+	public ToyRepository repo;
 	
 	@PostMapping("/products")
 	public boolean addToy(@RequestBody ToyDto toy) {
@@ -40,17 +44,19 @@ public class ToyController {
 		return service.getToyById(id);
 	}
 	
-	@PutMapping("/products/{id}")
-	public ToyModel updateToy(@RequestBody ToyDto toy,@PathVariable int id) {
-		return service.updateToy(toy,id);
-	}
+//	@PutMapping("/products/{id}")
+//	public ToyModel updateToy(@RequestBody ToyDto toy,@PathVariable int id) {
+//		return service.updateToy(toy,id);
+//	}
 	
 	@DeleteMapping("/products/{id}")
 	public boolean deleteToy(@PathVariable int id) {
 		return service.deleteToy(id);
 	}
 	
-	
-	
+	@GetMapping("/products/brand/{brand}")
+	public List<ToyModel> getToyByBrand(@PathVariable String brand){
+		return repo.getToyByBrand(brand);
+	}
 	
 }

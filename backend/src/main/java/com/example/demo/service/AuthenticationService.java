@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import java.util.List;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,6 +13,7 @@ import com.example.demo.dto.response.AuthenticationResponse;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
+
 
 import lombok.RequiredArgsConstructor;
 
@@ -47,5 +50,9 @@ public class AuthenticationService {
                 .token(jwtToken)
                 .build();
     }
+
+	public List<User> getData() {
+		return userRepository.findAll();
+	}
 
 }
