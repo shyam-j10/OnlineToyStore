@@ -5,9 +5,11 @@ import { cartProducts, removeCart } from '../../Redux/actions/action';
 import "../Shop/Shop.css"
 import home10 from '../../assets/addtocart.gif'
 import Footer from '../../Footer/Footer';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Cart() {
-
+  const notify=()=>toast.success("Removed from Cart");
   const prod=useSelector(state=>state)
   const dispatch=useDispatch()
   // const source=prod.allProducts.cartProduct;
@@ -41,12 +43,15 @@ export default function Cart() {
   }
   return (
     <div>
-        <NavBar/>
+        <NavBar source={source}/>
        {
-        source.length==0?
-          <img src={home10} style={{transform:"translateX(65%)"}}></img>:""
-       }
+         source.length==0?
+         <img src={home10} style={{transform:"translateX(65%)"}}></img>:""
+        }
+      {/* <div> */}
+      <ToastContainer/>
       <div className='products'>
+
     
         {source.map((product)=>
           <div className='product' key={product.pid}>
@@ -56,12 +61,15 @@ export default function Cart() {
                   <p id='price'> ₹{product.price}</p>
                   <p id='dprice'> ₹{product.dprice}</p>
                   <p id='dprice'> (Save{product.save}%)</p>
+                  {/* <input type={number}></input> */}
                 </div>
               <div className='btns'>
                 <h2 className='btnshop' 
                   onClick={()=>{
-                    alert("Removed from Cart")
+                    // alert("Removed from Cart")
+                    notify();
                     remove(product.id)
+                    
                   }}
                 >Remove from cart</h2>
               </div>
@@ -74,6 +82,7 @@ export default function Cart() {
             Total Price:{total}
             </h1>
         </div>
+        {/* </div> */}
       {/* <Footer/> */}
     </div>
   )

@@ -20,13 +20,14 @@ import NavBar from '../../Nav/Navbar'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartProducts, favProducts} from '../../Redux/actions/action'
 import axios from 'axios'
+import { ToastContainer,toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // import './MarqueeImage.css'; 
 
 
 export default function Shop() {
-  const [source,setSource]=useState([]);
   const dispatch=useDispatch();
-
+  const [source,setSource]=useState([]);
   useEffect(() => {
       axios.get("http://localhost:8080/api/v1/auth/products")
       .then((res)=>{
@@ -56,14 +57,15 @@ export default function Shop() {
       <img src={home10} alt="img" id="imges"/>
       <div className="marquee-container">
       <img src="https://cdn.fcglcdn.com/brainbees/banners/brandstrip1208-3-new-19-08-19.jpg" alt="Marquee Image" style={{marginBottom:"10px"}}/>
+        <ToastContainer/>
     </div>
       <div className='products'>
         {source.map((product)=>
           <div className='product' key={product.pid}>
             <a onClick={()=>{
               dispatch(favProducts(product))
-              }} style={{fontSize:"20px"}}><FcLike/></a>
-            <a href='' id='share'><BsFillShareFill/></a>
+              toast.success("Added to favorites")
+              }} id='share'><FcLike/></a>
  
               <img src={product.link} className='image'></img>
               <p>{product.des}</p>
@@ -73,26 +75,24 @@ export default function Shop() {
                   <p id='dprice'> (Save{product.save}%)</p>
                 </div>
               <div className='btns'>
-                <h2 className='btnshop' 
+                {/* <h2 className='btnshop' 
                 onClick={()=>{
                   dispatch(favProducts(product))
                   alert("Added to favorite")
                 }}
-                >Add To Wishlist</h2>
+                >Add To Wishlist</h2> */}
                 <h2 className='btnshop' 
                   onClick={()=>{
                     dispatch(cartProducts(product))
-                    alert("Added to cart")
+                    toast.success("Added to cart")
                   }}
                 >Add To cart</h2>
               </div>
           </div>
         )}
       </div>
-      {/* <img src={home11} alt="img" style={{width:'1800px'}} /> */}
-      {/* <img src="https://cdn.fcglcdn.com/brainbees/images/intellitots-franchise-1dec22.jpg" style={{width:'1800px'}}/> */}
-      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/1920_132_desktop_moas_060723_30.jpg"/>
-      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_gear_&_activity_090523_18.jpg"/>           
+            <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/1920_132_desktop_moas_060723_30.jpg"/>
+            <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_gear_&_activity_090523_18.jpg"/>           
       <Footer/>
     </>
   )

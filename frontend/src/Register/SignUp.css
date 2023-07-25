@@ -69,11 +69,10 @@
 }
 .login{
 	height: 460px;
-	/* width: 350px; */
+	width: 350px;
 	background: #eee;
 	border-radius: 60% / 10%;
-	transform: translate(-50px,-180px);
-	/* transform: translateX(20px); */
+	transform: translate(-105px,-180px);
 	transition: .8s ease-in-out;
 }
 .login label{
@@ -82,7 +81,7 @@
 }
 
 #chk:checked ~ .login{
-	transform: translateY(-500px);
+	transform: translate(-105px,-500px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	

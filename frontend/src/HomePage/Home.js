@@ -48,10 +48,18 @@ export default function Home() {
       </div>
       
       <div className='hom1'>
-      <h2 className='head1'>
+      <div className='babyshop'>
+      {/* <h2 className='head1'>
       Toys and Games for Babies & Kids.
+      </h2> */}
+      <img src="https://kids.cmsmasters.net/wp-content/uploads/2015/07/8-2.jpg"/>
+      <div>
+
+      <h2 id='titlebaby'>
+        Toys and Games For Babies & Kids
       </h2>
-      <p style={{textAlign:"center"}}>
+
+      <p id='babyp'>
       Toys play a crucial part in development of a child. Toys as simple as wooden blocks
        or numbered puzzle, develops cognitive and physical skills. Complex puzzles, remote 
        control cars, bubble guns helps learn and analyse cause effects and spatial relationships.
@@ -59,15 +67,18 @@ export default function Home() {
          play more and more with such toys and make themselves happy. Children's attitude towards 
          their toys nurtures them big way.
       </p>
-      <img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_essentials_090523_01.jpg"/>
-      <h2 className='head1'>
+
+      <button id='btnbaby' type='submit'>Shop Now</button>
+      </div>
+      </div>
+      {/* <h2 className='head1'>
       Buy Toys Online like never before
       </h2>
       <p style={{textAlign:"center"}}>
       Choose to buy toys online and it will offer you widest range with features, specifications, 
       skill-set and use of toy. You are exposed to a variety of options of baby & kids toys from all 
       over world.
-      </p>
+      </p> */}
      
       {/* <h2 className='head1'>
       Selecting a Toy for your Child from FirstCry's widest range
@@ -96,10 +107,10 @@ export default function Home() {
 
 
       </p> */}
-      <div className='img1'>
+      {/* <div className='img1'>
         <img src="https://toycra.com/cdn/shop/files/PK30-15_1248x624.jpg?v=1631013699" style={{width:'800px',padding:'30px'}}/>
         <img src="https://toycra.com/cdn/shop/files/BO-05-06_1872x624.jpg?v=1613769851"style={{width:'800px',padding:'30px',marginLeft:'50px'}}/>
-      </div>
+      </div> */}
       <h2 className='head1'>
       Online Toy Store with a plethora of variety and brands
       </h2>
@@ -127,7 +138,18 @@ export default function Home() {
       {/* <img src={home9} style={{width:"1800px"}}/> */}
       {/* <img src={home6} style={{width:"1800px"}}/> */}
       
-      <Link to='shop'><img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_feeding_&_kids_food_090523_01.jpg"/></Link>
+      {/* <Link to='shop'><img src="https://cdn.fcglcdn.com/brainbees/images/cattemplate/summer02_desktop_feeding_&_kids_food_090523_01.jpg"/></Link> */}
+
+      <div className='ourbrands'>
+        <div>
+          <center><h2>Our Brands</h2></center> 
+        </div>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/2048px-LEGO_logo.svg.png'></img>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD9ssLdfAuubTtS1rXdpsj6JZjeXKS-GDSog&usqp=CAU'></img>
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkOpRi3waOuuN9cYNlgKhWkgOmpbdm9Hn9Dg&usqp=CAU'></img>
+        <img src='https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-banner/1689163681sob.webp'></img>
+        <img src='https://cdn.pixelbin.io/v2/black-bread-289bfa/HrdP6X/original/hamleys-banner/1672213649573X771_NERF.webp'></img>
+      </div>
       
       
       <Footer/>

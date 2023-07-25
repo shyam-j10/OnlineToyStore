@@ -5,7 +5,6 @@ import { Link, useNavigate} from 'react-router-dom';
 import logo from '../assets/logo.jpeg'
 import { UserContext } from '../App';
 import {GiHamburgerMenu} from 'react-icons/gi'
-import { HideImage } from '@mui/icons-material';
 import { useSelector } from 'react-redux';
 
 function NavBar() {
@@ -35,12 +34,6 @@ function NavBar() {
                 <i class="fa-solid fa-magnifying-glass" id='search' onClick={handleSearch}></i>
             </div>
             <div className='btns1' style={{color:"white"}} >
-              
-
-              
-              {/* <Link to={'/login'} id='reg'>
-                <i class="fa-regular fa-user"/> 
-                Login</Link> */}
 
               <Link to={'/signup'} id='regs'><i class="fa-solid fa-pen-to-square"></i> Account</Link>
             </div>
