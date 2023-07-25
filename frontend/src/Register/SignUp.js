@@ -4,6 +4,8 @@ import {Link, useNavigate} from "react-router-dom"
 import axios from 'axios'
 import { useDispatch } from 'react-redux';
 import { login } from '../Redux/actions/action';
+import { Filter } from '@mui/icons-material';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function SignUp() {
 	const navigate=useNavigate();
@@ -11,6 +13,7 @@ export default function SignUp() {
 	const [email,setEmail]=useState("");
 	const [pass,setPass]=useState("");
 	const [names,setName]=useState("");
+	// const[flag,setFlag]=useState(false);
 
 
 	const [customerLogin,setCustomerLogin]=useState(
@@ -20,6 +23,18 @@ export default function SignUp() {
 	}
 	)
 
+	const getData=()=>{
+		axios.get("http://localhost:8080/api/v1/auth/details")
+		.then(res=>{
+			res.data.filter((items)=>{
+				if(customerLogin.email.localeCompare(items.email) === 0){
+					console.log(items)
+					localStorage.setItem("name",items.name)
+				}
+			})
+		})
+	}
+
 	const signupHandler = (e) =>{
 		e.preventDefault();
 		axios.post("http://localhost:8080/api/v1/auth/register",{
@@ -28,7 +43,7 @@ export default function SignUp() {
 			password:pass
 		}).then((res)=>{
 			console.log(res.data.token);
-			alert("Successfull Registration")
+			toast.success("Successfull Registration")
 		}).catch((error) => {
 			console.log("Error occured while submitting request")
 		})
@@ -40,10 +55,15 @@ export default function SignUp() {
 			email:customerLogin.email,
 			password:customerLogin.password
 		}).then((res)=>{
+
+			if(res.status === 200){
+				getData();
+
+			}
 			const token=res.data.token;
 			console.log(token)
-			alert("Successfully signed in")
-			navigate("/dashboard")
+			toast.success("Successfully signed in")
+			navigate("/shop")
 		})
 		.catch((e)=>
 		{
@@ -57,6 +77,8 @@ export default function SignUp() {
 	
   return (
     <div className='registers'>
+
+		<ToastContainer/>
       {/* <div className="sign-up">
 		<form id='signupform' onSubmit={submitHandler}>
 			<h1 id='signuph1'><span id='c'>C</span>reate  <span id='a'>A</span>ccount</h1>

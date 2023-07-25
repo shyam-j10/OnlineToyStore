@@ -4,7 +4,7 @@ import NavBar from '../../Nav/Navbar';
 import { removeCart, removeWishlist } from '../../Redux/actions/action';
 import "../Shop/Shop.css"
 import home10 from '../../assets/addtocart.gif'
-import Footer from '../../Footer/Footer';
+import { toast, ToastContainer } from 'react-toastify';
 
 export default function Wishlist() {
     const dispatch=useDispatch();
@@ -28,6 +28,7 @@ export default function Wishlist() {
   return (
     <div>
 
+        <ToastContainer/>
         <NavBar/>
         {
         source.length==0?
@@ -47,7 +48,7 @@ export default function Wishlist() {
               <div className='btns'>
                 <h2 className='btnshop' 
                   onClick={()=>{
-                    alert("Removed from favorites")
+                    toast("Removed from favorites")
                     remove(product.id);
                   }}
                 >Remove from Wishlist</h2>

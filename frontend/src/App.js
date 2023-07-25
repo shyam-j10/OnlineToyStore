@@ -11,6 +11,7 @@ import Cart from './components/Cart/Cart';
 import Wishlist from './components/Wishlist/Wishlist';
 import Dashboard from './components/Dashboard/Dashboard';
 import About from './About/About';
+import Contact from './Contact/Contact';
 
 
 export const UserContext=createContext();
@@ -34,6 +35,7 @@ function App() {
             <Route path='/wishlist' element={<Wishlist/>}></Route>
             <Route path='/shop/:search' element={<Search/>}></Route>
             <Route path='/dashboard' element={<Dashboard/>}></Route>
+            <Route path='/contact' element={<Contact/>}></Route>
           </Routes>
       </BrowserRouter> 
     </UserContext.Provider>

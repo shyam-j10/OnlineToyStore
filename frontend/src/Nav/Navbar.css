@@ -8,14 +8,21 @@
     font-size: 20px;
     margin-top: 20px;
     padding: 20px;
-    
   }
   #about{
-    
     padding: 20px;
     font-size: 20px;
     margin-top: 20px;
+    width: 130px;
   }
+  
+  #contact{
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 20px;
+    /* margin-left: 10px; */
+  }
+
   #cart{
     padding: 20px;
     font-size: 20px;
@@ -51,7 +58,7 @@
     display: flex;
      width:fit-content;
     margin-left: 1%;
-    padding-bottom: 20px;
+    /* padding-bottom: 20px; */
   }
   
 
@@ -73,7 +80,7 @@
     height: auto;
     display: flex;
     color: black;
-    display: block;
+    /* display: block; */
   }
 
 
@@ -84,17 +91,31 @@
     text-align: center;
     background-color:#0b0201;
     color: rgb(255, 255, 255);
-    margin-right: 13px;
+    margin-left : 20px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border-radius: 0.1cm;
     font-size: 26px;
+    height: 20px;
   }
 
- #search{
-    margin-top: 38px;
-    margin-right: -10px;
-    padding: 10px;
-    color: aliceblue;
+#glass{
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+  #reg{
+    margin-left: 20px;
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
+
+ #searchs{
+    /* margin-top: 38px; */
+    /*margin-left: 20px; */
+    padding: 10px; 
+    /* transform: translateX(50%); */
+    color: black;
+    /* transform: translateY(-50%); */
  }
  #inputsearch{
   background-color: rgb(255, 255, 255);
@@ -102,15 +123,20 @@
   margin-top: 30px;
 
   color:black;
-  border: 50px;
-  margin-bottom: 100px;
+  border: 50px; 
+  /* margin-bottom: 100px; */
 
  }
  .btns1{
-  margin-top: 35px;
-  margin-left: 15%;
+  display: flex;
+  margin-top: 20px;
+  margin-left: 10%;
+  width: 100%;
  }
 
+ .btns1 p{
+  width: 20%;
+ }
 
 
 #logo{
@@ -119,10 +145,3 @@
   height: 80px;
   margin-top: 10px;
 }
-
-/* .hamb{
-  display: none;
-  color: white;
-  transform: translate(100%,40%);
-  font-size: xx-large;
-} */

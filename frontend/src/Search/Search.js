@@ -12,6 +12,8 @@ import shop9 from '../assets/shop9.jpg'
 import "../components/Shop/Shop.css"
 import NavBar from '../Nav/Navbar'
 import axios from 'axios'
+import { FcLike } from 'react-icons/fc';
+import { ToastContainer,toast } from 'react-toastify'
 import { useDispatch } from 'react-redux'
 import { cartProducts, favProducts } from '../Redux/actions/action'
 
@@ -67,10 +69,15 @@ export default function Search() {
   return (
     <div>
       <NavBar/>
+      <ToastContainer/>
       <div className='products'>
         {
           loading ? arr.map((items)=>
           <div className='product'>
+              <a onClick={()=>{
+              dispatch(favProducts(items))
+              toast.success("Added to favorites")
+              }} id='share'><FcLike/></a>
                   <img src={items.link} className='image'></img>
                   {/* <p>{items.brand}</p> */}
                   <p>{items.des}</p>
@@ -80,16 +87,16 @@ export default function Search() {
                     <p id='dprice'> Save{items.save}%</p>
                   </div>
                   <div className='btns'>
-                    <h2 className='btnshop'
+                    {/* <h2 className='btnshop'
                     onClick={()=>{
                       dispatch(favProducts(items))
                       alert("Added to favorite")
                     }}
-                    >Add To Wishlist</h2>
+                    >Add To Wishlist</h2> */}
                     <h2 className='btnshop'
                      onClick={()=>{
                       dispatch(cartProducts(items))
-                      alert("Added to cart")
+                      toast.success("Added to cart")
                     }}
                     >Add To cart</h2>
                   </div>
